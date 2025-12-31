@@ -11,7 +11,4 @@ project(simple_decoder
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-find_package(dav1d)
-
 add_subdirectory(src)
-

@@ -49,6 +49,7 @@ find_path(dav1d_INCLUDE_DIR
     HINTS ${PC_dav1d_INCLUDE_DIRS}
     PATH_SUFFIXES dav1d
 )
+
 find_library(dav1d_LIBRARY
     NAMES dav1d
     HINTS ${PC_dav1d_LIBRARY_DIRS}
@@ -61,7 +62,8 @@ find_package_handle_standard_args(dav1d
     REQUIRD_VARS
         dav1d_LIBRARY
         dav1d_INCLUDE_DIR
-    VERSION_VAR dav1d_VERSION
+    # VERSION_VAR
+    #     dav1d_VERSION
 )
 
 if(dav1d_FOUND)
@@ -79,4 +81,3 @@ if(dav1d_FOUND AND NOT TARGET dav1d::dav1d)
         INTERFACE_INCLUDE_DIRECTORIES "${dav1d_INCLUDE_DIR}"
     )
 endif()
-
