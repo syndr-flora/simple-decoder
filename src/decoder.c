@@ -5,35 +5,6 @@
 
 #include <dav1d/dav1d.h>
 
-// TODO assign me according to https://videolan.videolan.me/dav1d/structDav1dPicAllocator.html
-int alloc_picture(Dav1dPicture *pic, void *cookie) {
-
-    return 0;
-}
-
-//TODO assign me to function that releases picture buffer
-void release_picture(Dav1dPicture *pic, void *cookie) {
-
-}
-
-void dav1d_default_settings(Dav1dSettings *const s) {
-    s->n_threads = 0;
-    s->max_frame_delay = 0;
-    s->apply_grain = 1;
-    s->allocator.cookie = NULL;
-    s->allocator.alloc_picture_callback = alloc_picture;
-    s->allocator.release_picture_callback = release_picture;
-    s->logger.cookie = NULL;
-    s->logger.callback = NULL; // https://videolan.videolan.me/dav1d/structDav1dLogger.html
-    s->operating_point = 0;
-    s->all_layers = 1;
-    s->frame_size_limit = 0;
-    s->strict_std_compliance = 0;
-    s->output_invisible_frames = 0;
-    s->inloop_filters = DAV1D_INLOOPFILTER_ALL;
-    s->decode_frame_type = DAV1D_DECODEFRAMETYPE_ALL;
-}
-
 int main(int argc, char **argv) {
 
     printf("Starting Program\n");
